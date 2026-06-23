@@ -5,13 +5,13 @@ from datetime import datetime
 import numpy as np
 import requests
 
-from .config import CONFIG, TELEGRAM_API
+from .config import CONFIG, LINE_API
 
 
-def send_telegram(text: str):
-    url = TELEGRAM_API.format(token=os.environ["TELEGRAM_BOT_TOKEN"])
+def send_line(text: str):
+    url = LINE_API.format(token=os.environ["LINE_NOTIFY_TOKEN"])
     payload = {
-        "chat_id": os.environ["TELEGRAM_CHAT_ID"],
+        "chat_id": os.environ["LINE_CHAT_ID"],
         "text": text,
         "parse_mode": "Markdown",
     }
