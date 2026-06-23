@@ -8,7 +8,7 @@ import requests
 from .config import CONFIG, TELEGRAM_API
 
 
-def send_line(text: str):
+def send_TELEGRAM(text: str):
     url = TELEGRAM_API.format(token=os.environ["TELEGRAM_BOT_TOKEN"])
     payload = {
         "chat_id": os.environ["TELEGRAM_CHAT_ID"],
