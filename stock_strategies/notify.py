@@ -9,9 +9,9 @@ from .config import CONFIG, TELEGRAM_API
 
 
 def send_line(text: str):
-    url = TELEGRAM_API.format(token=os.environ["LINE_NOTIFY_TOKEN"])
+    url = TELEGRAM_API.format(token=os.environ["TELEGRAM_BOT_TOKEN"])
     payload = {
-        "chat_id": os.environ["LINE_CHAT_ID"],
+        "chat_id": os.environ["TELEGRAM_CHAT_ID"],
         "text": text,
         "parse_mode": "Markdown",
     }
