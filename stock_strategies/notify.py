@@ -5,11 +5,11 @@ from datetime import datetime
 import numpy as np
 import requests
 
-from .config import CONFIG, LINE_API
+from .config import CONFIG, TELEGRAM_API
 
 
 def send_line(text: str):
-    url = LINE_API.format(token=os.environ["LINE_NOTIFY_TOKEN"])
+    url = TELEGRAM_API.format(token=os.environ["LINE_NOTIFY_TOKEN"])
     payload = {
         "chat_id": os.environ["LINE_CHAT_ID"],
         "text": text,
